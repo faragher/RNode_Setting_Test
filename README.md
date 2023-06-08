@@ -16,4 +16,5 @@ Simple test for RNode settings for use in Reticulum
   * You may need to use "python" instead of "python3" depending on your system
   * The address does not include <>
   * If the "server address" line does not appear, set your Reticulum log level to at least 4
+  * Increasing the log level to 7 on Receiver will show received path requests
   
