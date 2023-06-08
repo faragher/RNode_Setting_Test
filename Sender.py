@@ -1,5 +1,7 @@
 ##########################################################
-# Placeholder   #
+# Based on Announce.py and Echo.py                       #
+# Rnode Setting Test Sender                              #
+# github.com/faragher/RNode_Setting_Test/                #
 ##########################################################
 
 import argparse
@@ -46,7 +48,7 @@ def client(destination_hexhash, configpath, timeout=None):
         RNS.log(str(e)+"\n")
         exit()
     identity = RNS.Identity()
-    # We must first initialise Reticulum
+    
     reticulum = RNS.Reticulum(configpath)
     destination_1 = RNS.Destination(
         identity,
