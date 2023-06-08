@@ -1,7 +1,7 @@
 ##########################################################
 # Based on Announce.py and Echo.py                       #
-# Packet Loss test receiver                              #
-#                                                        #
+# Rnode Setting Test receiver                            #
+# github.com/faragher/RNode_Setting_Test/                #
 ##########################################################
 
 import argparse
@@ -29,23 +29,7 @@ def program_setup(configpath):
         RNS.prettyhexrep(destination_1.hash)
     )
 
-#    destination_2 = RNS.Destination(
-#        identity,
-#        RNS.Destination.IN,
-#        RNS.Destination.SINGLE,
-#        APP_NAME,
- #       "announcesample",
-#        "noble_gases"
-#    )
-
-    #destination_1.set_proof_strategy(RNS.Destination.PROVE_ALL)
-    #destination_2.set_proof_strategy(RNS.Destination.PROVE_ALL)
-
-    # We create an announce handler and configure it to only ask for
-    # announces from "example_utilities.announcesample.fruits".
-    # Try changing the filter and see what happens.
     announce_handler = ExampleAnnounceHandler(
-#        aspect_filter="example_utilities.GP"
          aspect_filter=None
     )
 
@@ -64,12 +48,6 @@ def announceLoop():
     print("Waiting for data. (Enter to end test, Ctrl-C to abort)")
 
     entered = input()
-    #destination_1.announce(app_data=fruit.encode("utf-8"))
-    #RNS.log(
-    #    "Sent announce from "+
-    #    RNS.prettyhexrep(destination_1.hash)+
-    #    " ("+destination_1.name+")"
-    #)
     print("Recieved "+str(rcd_announce)+" announces. "+str(((10-rcd_announce)/10)*100)+"% lost")
     print("Recieved "+str(rcd_packets)+" packets. "+str(((10-rcd_packets)/10)*100)+"% lost")
 
